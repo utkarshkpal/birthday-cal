@@ -1,0 +1,39 @@
+.card-wrapper {
+  width: 17.2rem;
+  margin-right: 2rem;
+}
+
+.card {
+  border: 0.1rem solid lightgray;
+}
+
+.card-head {
+  padding: 1.1rem;
+  text-align: end;
+  background-color: #ab9eef;
+  color: whitesmoke;
+}
+
+.card-body {
+  display: grid;
+  height: 17rem;
+  width: 100%;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  color: whitesmoke;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.item-count {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 1rem;
+}
