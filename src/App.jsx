@@ -15,21 +15,15 @@ const initData = [
   { name: "Khal Drogo", birthday: "19/08/2014" },
   { name: "Eddard STark", birthday: "21/09/2014" },
   { name: "Daenerys Targaryen", birthday: "5/09/2016" },
+  { name: "Cersei Lannister", birthday: "20/08/2014" },
+  { name: "Rob Stark", birthday: "27/08/2014" },
 ];
 
 function App() {
   const [year, setYear] = useState(2014);
   const [data, setData] = useState(initData);
 
-  const filterByYear = (data, year) => {
-    return data.filter(({ birthday }) => {
-      const [, , itemYear] = birthday.split("/");
-
-      if (year == itemYear) return true;
-    });
-  };
-  const filteredData = filterByYear(data, year);
-  const aggData = aggDataByDay(filteredData);
+  const aggData = aggDataByDay(data);
 
   const handleSubmit = (event) => {
     event.preventDefault();
