@@ -8,9 +8,13 @@ const getStyle = (length) => {
 };
 
 const getInitials = (name) => {
-  const [first, last] = name.split(" ");
-  const initials = first[0] + last[0];
-  return initials.toUpperCase();
+  try {
+    const [first, last] = name.split(" ");
+    const initials = first[0] + last[0];
+    return initials.toUpperCase();
+  } catch {
+    alert("Invalid name value");
+  }
 };
 
 const getLabelText = (length) => {
