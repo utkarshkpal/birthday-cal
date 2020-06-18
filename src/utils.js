@@ -37,13 +37,18 @@ export const getElapsedTime = (date) => {
   return now.getTime() - date.getTime();
 };
 
-export const aggDataByDay = (data) => {
+export const aggDataByDay = (data, currentYear) => {
   const dayArray = new Array(7).fill([]);
   data.forEach(({ name, birthday }) => {
-    const birthDate = getDateObj(birthday);
+    const [date, month, birthYear] = birthday.split("/");
+    const currentBirthDate = `${date}/${month}/${currentYear}`;
+    const originalBirthDate = getDateObj(birthday);
+    const birthDate = getDateObj(currentBirthDate);
     const day = birthDate.getDay();
-    const elapsedTime = getElapsedTime(birthDate);
-    dayArray[day] = [...dayArray[day], { name, elapsedTime }];
+    const elapsedTime = getElapsedTime(originalBirthDate);
+    if (currentYear >= birthYear) {
+      dayArray[day] = [...dayArray[day], { name, elapsedTime }];
+    }
   });
   return dayArray;
 };

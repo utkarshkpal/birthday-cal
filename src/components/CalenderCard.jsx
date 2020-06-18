@@ -23,7 +23,7 @@ const getLabelText = (length) => {
   else return `${length} Birthdays`;
 };
 const sortByAge = (list) => {
-  return list.sort((l, r) => r.elapsedTime - l.elapsedTime);
+  return list.sort((l, r) => l.elapsedTime - r.elapsedTime);
 };
 
 export default function CalenderCard({ title, list }) {

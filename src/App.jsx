@@ -6,7 +6,6 @@ import { aggDataByDay } from "./utils";
 const initData = [
   { name: "Tyrion Lannister", birthday: "12/02/2014" },
   { name: "Jamie Lannister", birthday: "13/08/2014" },
-  { name: "Roose Bolton", birthday: "19/02/2014" },
   { name: "Arya Stark", birthday: "1/01/2013" },
   { name: "John Snow", birthday: "16/03/2012" },
   { name: "Sansod Clegane", birthday: "15/03/2012" },
@@ -15,15 +14,15 @@ const initData = [
   { name: "Khal Drogo", birthday: "19/08/2014" },
   { name: "Eddard STark", birthday: "21/09/2014" },
   { name: "Daenerys Targaryen", birthday: "5/09/2016" },
-  { name: "Cersei Lannister", birthday: "20/08/2014" },
-  { name: "Rob Stark", birthday: "27/08/2014" },
+  { name: "Cersei Lannister", birthday: "24/09/1993" },
+  { name: "Rob Stark", birthday: "29/02/2020" },
 ];
 
 function App() {
-  const [year, setYear] = useState(2014);
+  const [year, setYear] = useState(2020);
   const [data, setData] = useState(initData);
 
-  const aggData = aggDataByDay(data);
+  const aggData = aggDataByDay(data, year);
 
   const handleSubmit = (event) => {
     event.preventDefault();
